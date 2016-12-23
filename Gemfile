@@ -44,6 +44,7 @@ group :development, :test do
   # gem 'childprocess'
   gem 'bootstrap-sass','2.3.2.0'
   gem 'bcrypt-ruby', '3.1.2'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 group :development do
