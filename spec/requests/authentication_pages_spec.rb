@@ -22,7 +22,7 @@ describe "Authentication" do
 
       describe "after visiting another page" do
         before { click_link "Home" }
-        it { should_not have_selector('div.alert.alert-error') }
+        it { should_not have_error_message('Invalid') }
       end
     end
 
@@ -41,6 +41,15 @@ describe "Authentication" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
       end
+    end
+
+    describe "as non-signin user" do
+      before { click_link "Home" }
+
+      it { should_not have_link('Profile') }
+      it { should_not have_link('Settings') }
+      it { should_not have_link('Sign out',    href: signout_path) }
+      it { should have_link('Sign in', href: signin_path) }
     end
   end
 
@@ -69,9 +78,7 @@ describe "Authentication" do
       describe "when attempting to visit a protected page" do
         before do
           visit edit_user_path(user)
-          fill_in "Email",    with: user.email
-          fill_in "Password", with: user.password
-          click_button "Sign in"
+          valid_signin(user)
         end
 
         describe "after signing in" do
@@ -80,7 +87,20 @@ describe "Authentication" do
             expect(page).to have_title('Edit user')
           end
         end
+      end
+      describe "when signing in again" do
+        before do
+          delete signout_path
+          visit signin_path
+          fill_in "Email",    with: user.email
+          fill_in "Password", with: user.password
+          click_button "Sign in"
         end
+
+        it "should render the default (profile) page" do
+          expect(page).to have_title(user.name)
+        end
+      end
     end
 
     describe "as wrong user" do
