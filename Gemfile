@@ -50,6 +50,12 @@ group :development, :test do
   gem 'bootstrap-sass','2.3.2.0'
   gem 'bcrypt-ruby', '3.1.2'
   gem 'factory_girl_rails', '4.2.1'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+
 end
 
 group :development do
