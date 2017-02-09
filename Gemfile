@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'bootstrap-sass','2.3.2.0'
+
 # gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -47,7 +49,6 @@ group :development, :test do
   # gem 'spork-rails', '4.0.0'
   # gem 'guard-spork'
   # gem 'childprocess'
-  gem 'bootstrap-sass','2.3.2.0'
   gem 'bcrypt-ruby', '3.1.2'
   gem 'factory_girl_rails', '4.2.1'
   gem 'capistrano',         require: false
