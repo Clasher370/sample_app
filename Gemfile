@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
   gem 'will_paginate'
   gem 'bootstrap-will_paginate'
   gem 'rspec-its'
+  gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +50,7 @@ group :development, :test do
   # gem 'spork-rails', '4.0.0'
   # gem 'guard-spork'
   # gem 'childprocess'
-  gem 'bcrypt-ruby', '3.1.2'
+
   gem 'factory_girl_rails', '4.2.1'
   gem 'capistrano',         require: false
   gem 'capistrano-rvm',     require: false
