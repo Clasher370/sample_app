@@ -8,8 +8,8 @@ gem 'bootstrap-sass','2.3.2.0'
 # gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '~> 3.0'
+# Use Puma as the app server , '~> 3.0'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
