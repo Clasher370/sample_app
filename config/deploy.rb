@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.7.2'
 
-set :application, 'kupinam'
-set :repo_url, 'git@github.com:aya-soft/kupinam.git'
+set :application, 'sample_app'
+set :repo_url, 'git@github.com:Clasher370/sample_app.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
